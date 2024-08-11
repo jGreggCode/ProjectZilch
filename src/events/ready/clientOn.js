@@ -5,7 +5,7 @@ module.exports = (c, client, handler) => {
 
     let status = [
         {
-            name: "to voice channels",
+            name: "voice channels",
             type: ActivityType.Listening,
         },
         {
