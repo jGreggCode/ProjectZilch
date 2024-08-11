@@ -14,11 +14,12 @@ const client = new Client({
 
 new CommandKit({
     client,
+    devGuildIds: ['493042300075638784'],
     commandsPath: path.join(__dirname, 'commands'),
     eventsPath: path.join(__dirname, 'events'),
     validationsPath: path.join(__dirname, 'validations'),
     skipBuiltInValidations: true,
     bulkRegister: true,
-});
 
-client.login(process.env.TOKEN);
+});
+client.login(process.env.TOKENDEV);
