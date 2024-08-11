@@ -43,6 +43,6 @@ module.exports = (message, client, handler) => {
     }
 
     if (msg === 'panget') {
-        message.reply(`ni <@494469885741760512>`);
+        message.reply(`ni <@494469885741760512>!`);
     }
 };  
