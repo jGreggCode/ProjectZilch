@@ -22,4 +22,4 @@ new CommandKit({
     bulkRegister: true,
 
 });
-client.login(process.env.TOKENDEV);
+client.login(process.env.TOKEN);
