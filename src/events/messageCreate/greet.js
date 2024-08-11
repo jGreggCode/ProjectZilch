@@ -1,8 +1,7 @@
 module.exports = (message, client, handler) => {
+    if (message.author.bot) return;
 
     const msg = message.content;
-
-    const repNum = Math.floor(Math.random() * 12) + 1;
 
     const triggers = [
         'hello',
@@ -33,6 +32,8 @@ module.exports = (message, client, handler) => {
         'Sup, you got stories to tell?',
         'Hey, so boring these days, whatchu doin\'?'
     ]
+
+    const repNum = Math.floor(Math.random() * responses.length);
 
     if (triggers.includes(msg)) {
         message.reply(responses[repNum]);
