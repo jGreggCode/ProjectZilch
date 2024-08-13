@@ -33,17 +33,12 @@ To set up Project Zilch on your server, follow these steps:
     - Add your Discord bot token and other necessary configurations:
     ```env
     DISCORD_TOKEN=your-discord-bot-token
-    PREFIX=!
     ```
 
 4. Start the bot:
     ```bash
     node index.js
     ```
-
-## Usage
-
-Project Zilch comes with a variety of commands and features. Once the bot is running, use the command prefix (default is `!`) to interact with the bot. For a full list of commands, type `!help` in your Discord server.
 
 ## Roadmap
 
