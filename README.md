@@ -7,7 +7,7 @@
 Project Zilch is designed to be an all-around bot, packed with a variety of modules to cater to diverse server needs:
 
 - **Leveling System**: Reward active members with experience points and ranks.
-- **Welcomer**: Greet new members with customizable welcome messages.
+- **Welcomer**: Greet new members with customizable welcome messages and banners.
 - **Verification**: Secure your server with a robust verification system.
 - **Games**: Engage your community with fun games like Rock, Paper, Scissors, and more.
 - **Economy**: Introduce a virtual economy where users can earn, spend, and trade currency.
@@ -19,7 +19,7 @@ To set up Project Zilch on your server, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/project-zilch.git
+    git clone https://github.com/jGreggCode/ProjectZilch.git
     cd project-zilch
     ```
 
