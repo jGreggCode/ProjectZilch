@@ -1,0 +1,13 @@
+{
+    "colors": {
+        "red": "0xf20000",
+        "orange": "0xff8000",
+        "yellow": "0xfff700",
+        "green": "0x1adb00",
+        "cyan": "0x05fffb",
+        "blue": "0x040cde",
+        "violet": "0x9408c7",
+        "pink": "0xed05d6"
+    },
+    "guildIconURI": "https://media.discordapp.net/attachments/747788413280976958/1223230050682540083/image-m_dNHg1wk-transformed.jpeg?ex=66ba9882&is=66b94702&hm=361b52e0a58eaab827b12c470262d6d78fd3e7f0ad1ec4cb26ca31d148bdb425&=&format=webp&width=596&height=596"
+}

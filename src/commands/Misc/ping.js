@@ -7,20 +7,21 @@ module.exports = {
     },
 
     run: async ({ interaction, client, handler }) => {
-        let msg = await interaction.channel.send('Pinging please wait...')
         const embedBuilder = new EmbedBuilder();
         const author = interaction.user.username;
-        const authorAvatar = interaction.user.displayAvatarURL({ format: 'png' });
 
-        let latency = msg.createdTimestamp - interaction.createdTimestamp;
-        msg.delete();
+        await interaction.deferReply();
 
-        const newMsg = `**Bot Latency:** \`${latency}ms\` \n**API Latency:** \`${Math.round(interaction.client.ws.ping)}ms\``
+        const reply = await interaction.fetchReply();
+        const ping = reply.createdTimestamp - interaction.createdTimestamp;
+
+
+        const newMsg = `**Client: \`${ping}ms\`** \n**Websocket: \`${client.ws.ping}ms\`**`;
+
         embedBuilder.setDescription(newMsg);
-        embedBuilder.setColor(interaction.member.displayHexColor);
-        embedBuilder.setFooter({ text: `Requested By: ${author}`, iconURL: authorAvatar });
-        embedBuilder.setTimestamp();
+        embedBuilder.setColor('Green');
+        embedBuilder.setFooter({ text: author });
 
-        interaction.reply({ embeds: [embedBuilder] });
+        interaction.editReply({ embeds: [embedBuilder] });
     },
 };

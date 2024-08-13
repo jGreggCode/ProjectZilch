@@ -2,12 +2,12 @@ const { EmbedBuilder, ApplicationCommandOptionType } = require('discord.js');
 
 module.exports = {
     data: {
-        name: 'simple-embed',
+        name: 'embed-builder',
         description: 'Sends an embed!',
         options: [
             {
                 name: 'title',
-                description: 'Title of the embed. Type `none` for no title',
+                description: 'Title of the embed. Type none for no title',
                 type: ApplicationCommandOptionType.String,
                 require: true
             },
@@ -60,6 +60,7 @@ module.exports = {
 
     run: async ({ interaction, client, handler }) => {
         await interaction.reply({ content: 'Your embed is being processed...', ephemeral: true });
+
         const embedBuilder = new EmbedBuilder();
         // Get options from the interaction
         const title = interaction.options.getString('title');
