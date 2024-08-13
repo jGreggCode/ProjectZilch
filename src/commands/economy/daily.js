@@ -1,4 +1,5 @@
-const { Client, Interaction } = require('discord.js');
+const { Client, Interaction, EmbedBuilder } = require('discord.js');
+const { economy } = require('../../../Utils/config.json');
 const User = require('../../models/Users');
 
 const dailyAmount = 500;
@@ -14,6 +15,13 @@ module.exports = {
      */
     run: async (params) => {
         const { interaction, client, handler } = params;
+        const profile = interaction.user;
+        const icon = economy.icon;
+        const embedBuilder = new EmbedBuilder()
+            .setTitle(`Daily Coins`)
+            .setFooter({ text: profile.username, iconURL: profile.displayAvatarURL() })
+            .setTimestamp();
+
         if (!interaction.inGuild()) {
             interaction.reply({ content: "You can only run this command inside a server", ephemeral: true });
             return;
@@ -34,11 +42,13 @@ module.exports = {
                 const currentDate = new Date().toDateString();
 
                 if (lastDailyDate === currentDate) {
-                    interaction.editReply(
-                        "You have already collected your daily coins today, come back tomorrow!"
-                    );
+                    embedBuilder.setDescription("You have already collected your daily coins today, come back tomorrow!");
+                    embedBuilder.setColor(`Red`)
+                    interaction.editReply({ embeds: [embedBuilder] });
                     return;
                 }
+
+                user.lastDaily = new Date();
             } else {
                 user = new User({
                     ...query,
@@ -49,7 +59,14 @@ module.exports = {
             user.balance += dailyAmount;
             await user.save();
 
-            interaction.editReply(`\`${dailyAmount}\` was added to your balance. Your new balance is \`${user.balance}\``)
+            embedBuilder.setAuthor({ name: `Balance udpated`, iconURL: economy.iconBalanceUpdated });
+            embedBuilder.setColor(`Green`);
+            embedBuilder.addFields(
+                { name: "Added", value: `**${icon} ${dailyAmount}**`, inline: true },
+                { name: "New Balance", value: `**${icon} ${user.balance}**`, inline: true }
+            )
+
+            interaction.editReply({ embeds: [embedBuilder] });
 
         } catch (error) {
             console.log(`Error with daily: ${error}`);
