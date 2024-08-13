@@ -1,4 +1,8 @@
 {
+    "economy": {
+        "icon": "<:zilch:1272957533878882367>",
+        "iconBalanceUpdated": "https://media.discordapp.net/attachments/1223175503389786112/1272959466446262303/update.png?ex=66bcdf63&is=66bb8de3&hm=bf005c54bcc3ebf2532f1686f1cf81a338af78e3ac3b3ab98658a862f6490b92&=&format=webp&quality=lossless"
+    },
     "colors": {
         "red": "0xf20000",
         "orange": "0xff8000",

@@ -46,6 +46,7 @@ module.exports = {
                     embedBuilder.setColor(`Red`)
                     interaction.editReply({ embeds: [embedBuilder] });
                     return;
+                    // What is happening in the GIT
                 }
 
                 user.lastDaily = new Date();
