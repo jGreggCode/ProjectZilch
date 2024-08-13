@@ -1,6 +1,6 @@
 # Project Zilch
 
-**Project Zilch** is a versatile Discord bot built using Node.js and Discord.js. Initially developed as a private bot, Project Zilch is soon to be publicized, offering a comprehensive suite of features designed to enhance Discord server management and user engagement.
+**Project Zilch** is a versatile Discord bot built using Node.js and Discord.js. Initially developed as a private bot by jGreggCode (John Gregg Felicisimo), Project Zilch is soon to be publicized, offering a comprehensive suite of features designed to enhance Discord server management and user engagement.
 
 ## Features
 
